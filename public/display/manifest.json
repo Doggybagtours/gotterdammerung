@@ -1,0 +1,50 @@
+{
+  "news": {
+    "file": "news.svg",
+    "width": 68.36,
+    "height": 39,
+    "label": "NEWS"
+  },
+  "discography": {
+    "file": "discography.svg",
+    "width": 159.1,
+    "height": 39,
+    "label": "DISCOGRAPHY"
+  },
+  "video": {
+    "file": "video.svg",
+    "width": 69.96,
+    "height": 39,
+    "label": "VIDEO"
+  },
+  "merch": {
+    "file": "merch.svg",
+    "width": 83.26,
+    "height": 39,
+    "label": "MERCH"
+  },
+  "band": {
+    "file": "band.svg",
+    "width": 59.32,
+    "height": 39,
+    "label": "BAND"
+  },
+  "contact": {
+    "file": "contact.svg",
+    "width": 112.62,
+    "height": 39,
+    "label": "CONTACT"
+  },
+  "mk-i": {
+    "file": "mk-i.svg",
+    "width": 43.49,
+    "height": 39,
+    "label": "MK I"
+  },
+  "mk-ii": {
+    "file": "mk-ii.svg",
+    "width": 45.29,
+    "height": 39,
+    "label": "MK II"
+  }
+}

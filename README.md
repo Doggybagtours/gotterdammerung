@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Götterdämmerung
 
-## Getting Started
+Official website for **Götterdämmerung** — post-punk industrial archive. Built with [Next.js](https://nextjs.org) 16, React 19, TypeScript, and Tailwind CSS 4.
 
-First, run the development server:
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Home — fullscreen warehouse hero |
+| `/news` | Announcements, updates and releases |
+| `/discography` | Albums, EPs, singles, lyrics and artwork |
+| `/video` | Music videos, live footage and YouTube embeds |
+| `/merch` | Merchandise and external shop links |
+| `/band` | Biography, history, members and photos |
+| `/contact` | Booking, management and general contact |
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run start` | Serve production build |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+## Deploy to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+This project is ready for [Vercel](https://vercel.com) with zero configuration.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push the repository to GitHub.
+2. Import the project in [Vercel Dashboard](https://vercel.com/new).
+3. Vercel auto-detects Next.js — no extra settings required.
+4. Deploy.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Alternatively, use the Vercel CLI:
 
-## Deploy on Vercel
+```bash
+npx vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No environment variables are required for the current placeholder site. Add a `.env.local` file when connecting forms, analytics, or a CMS.
+
+## Deploy to GitHub
+
+```bash
+git init
+git add .
+git commit -m "Initial commit — Götterdämmerung band website"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/gotterdammerung.git
+git push -u origin main
+```
+
+## Project Structure
+
+```
+app/              # Next.js App Router pages
+components/       # Shared UI components
+lib/              # Site config and constants
+public/           # Static assets
+```
+
+## Customization
+
+- **Site copy & navigation** — edit `lib/site.ts`
+- **Colors & typography** — edit `app/globals.css` and `app/layout.tsx`
+- **Page content** — edit files in `app/`
+
+Replace placeholder cards and disabled forms with real content, images, and integrations as they become available.
+
+## License
+
+All rights reserved. © Götterdämmerung.

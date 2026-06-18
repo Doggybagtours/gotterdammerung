@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #000000;
+  --charcoal: #0d0d0d;
+  --charcoal-light: #1a1a1a;
+  --white: #ffffff;
+  --white-muted: #b3b3b3;
+  --grey: #666666;
+  --grey-dark: #333333;
+  --background: var(--black);
+  --foreground: var(--white);
 }
 
 @theme inline {
+  --color-black: var(--black);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-light: var(--charcoal-light);
+  --color-white: var(--white);
+  --color-white-muted: var(--white-muted);
+  --color-grey: var(--grey);
+  --color-grey-dark: var(--grey-dark);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--white);
+  color: var(--black);
+}
+
+.section-border {
+  border-top: 1px solid var(--grey-dark);
 }
