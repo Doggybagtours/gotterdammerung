@@ -11,14 +11,6 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const ogImage = {
-  url: "/og-image.jpg",
-  width: 1200,
-  height: 630,
-  alt: "Götterdämmerung",
-  sizes: "1200x630",
-};
-
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -28,24 +20,51 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   icons: {
     icon: [
-      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      {
+        url: "/favicon/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/favicon/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
     ],
-    shortcut: "/favicon/favicon.ico",
-    apple: "/favicon/apple-touch-icon.png",
+    apple: [
+      {
+        url: "/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
   openGraph: {
     title: "Götterdämmerung",
     description: "Official website of Götterdämmerung.",
     siteName: siteConfig.name,
     type: "website",
-    images: [ogImage],
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Götterdämmerung",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Götterdämmerung",
     description: "Official website of Götterdämmerung.",
-    images: [ogImage],
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Götterdämmerung",
+      },
+    ],
   },
 };
 
