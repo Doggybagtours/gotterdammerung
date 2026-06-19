@@ -16,21 +16,12 @@ export function ReleaseCard({ release, detailed = false }: ReleaseCardProps) {
   return (
     <article className="group">
       {useBandcampPlayer ? (
-        <>
-          <BandcampEmbed
-            src={release.bandcampEmbedUrl!}
-            title={release.title}
-            height={release.bandcampEmbedHeight ?? 470}
-            className="mt-0"
-          />
-          {release.orderLink && (
-            <div className="mt-4">
-              <Button href={release.orderLink.href} variant="secondary" external>
-                {release.orderLink.label}
-              </Button>
-            </div>
-          )}
-        </>
+        <BandcampEmbed
+          src={release.bandcampEmbedUrl!}
+          title={release.title}
+          height={release.bandcampEmbedHeight ?? 470}
+          className="mt-0"
+        />
       ) : (
         <div className="relative aspect-square overflow-hidden bg-charcoal border border-white/10">
           <Image
@@ -52,6 +43,13 @@ export function ReleaseCard({ release, detailed = false }: ReleaseCardProps) {
         {detailed && (
           <>
             <p className="mt-2 text-xs text-white-muted">{release.formats}</p>
+            {release.orderLink && (
+              <div className="mt-4">
+                <Button href={release.orderLink.href} variant="secondary" external>
+                  {release.orderLink.label}
+                </Button>
+              </div>
+            )}
             {release.note && (
               <p className="mt-2 text-xs text-grey leading-relaxed">
                 {release.note}
