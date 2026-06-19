@@ -48,7 +48,11 @@ function ProseSection({
 export default function BandPage() {
   return (
     <>
-      <PageHeader title="Band" description={bandPageDescription} />
+      <PageHeader
+        title="Band"
+        description={bandPageDescription}
+        titleImage={{ src: "/nav/band.svg", width: 166.08, height: 36.16 }}
+      />
 
       <section className="py-16 md:py-24 bg-black">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
