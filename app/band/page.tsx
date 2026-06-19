@@ -3,9 +3,14 @@ import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { bandBiography } from "@/lib/band";
 
+const title = "Band Biography | Götterdämmerung";
+const description =
+  "Biography and history of Götterdämmerung. Formed in 1991, blending gothic rock, deathrock, post-punk and dark electronic influences.";
+
 export const metadata: Metadata = {
-  title: "Band",
-  description: "Biography and photos of Götterdämmerung.",
+  title: "Band Biography",
+  description,
+  openGraph: { title, description },
 };
 
 export default function BandPage() {

@@ -4,9 +4,14 @@ import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteConfig, socialLinks } from "@/lib/site";
 
+const title = "Contact | Götterdämmerung";
+const description =
+  "Contact Götterdämmerung for press, booking, interviews and general enquiries.";
+
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Booking, management and general contact for Götterdämmerung.",
+  description,
+  openGraph: { title, description },
 };
 
 export default function ContactPage() {

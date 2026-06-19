@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 
+const title = "News | Götterdämmerung";
+const description =
+  "Latest news, releases, announcements and updates from Götterdämmerung.";
+
 export const metadata: Metadata = {
   title: "News",
-  description: "News and announcements from Götterdämmerung.",
+  description,
+  openGraph: { title, description },
 };
 
 export default function NewsPage() {

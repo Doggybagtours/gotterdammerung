@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "Götterdämmerung",
   tagline: "Official Website",
-  description: "Official website of Götterdämmerung.",
+  description:
+    "Official website of Götterdämmerung. Gothic rock, deathrock, post-punk and dark electronic music since 1991. Discography, videos, news, merchandise and streaming links.",
   url: "https://gotterdammerung.vercel.app",
   email: "info@gotterdammerung.band",
 } as const;

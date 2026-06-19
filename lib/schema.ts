@@ -1,11 +1,10 @@
 import { previewReleases, releases, type Release } from "@/lib/discography";
-import { streamingPlatforms } from "@/lib/streaming";
-import { siteConfig, socialLinks } from "@/lib/site";
 
 const ARTIST_NAME = "Götterdämmerung";
+const BAND_URL = "https://gotterdammerung.band";
 
-export function artistId(baseUrl: string): string {
-  return `${baseUrl}/#musicgroup`;
+export function artistId(): string {
+  return `${BAND_URL}/#musicgroup`;
 }
 
 function absoluteUrl(baseUrl: string, path: string): string {
@@ -27,33 +26,37 @@ function albumReleaseType(
   return "AlbumRelease";
 }
 
-function buildArtistReference(baseUrl: string) {
+function buildArtistReference() {
   return {
     "@type": "MusicGroup" as const,
-    "@id": artistId(baseUrl),
+    "@id": artistId(),
     name: ARTIST_NAME,
   };
 }
 
-export function buildMusicGroupSchema(baseUrl: string) {
-  const sameAs = [
-    ...socialLinks.map((link) => link.href),
-    ...streamingPlatforms.map((platform) => platform.href),
-  ];
-
+export function buildMusicGroupSchema() {
   return {
     "@type": "MusicGroup",
-    "@id": artistId(baseUrl),
+    "@id": artistId(),
     name: ARTIST_NAME,
-    url: baseUrl,
-    email: siteConfig.email,
+    url: BAND_URL,
+    sameAs: [
+      "https://gotterdammerung.band",
+      "https://gotterdammerung.bandcamp.com",
+      "https://www.youtube.com/@gotterdammerung_band4064",
+      "https://www.facebook.com/gotterdammerung.band",
+      "https://www.instagram.com/gotterdammerung_band/",
+      "https://www.discogs.com/artist/99938-G%C3%B6tterd%C3%A4mmerung",
+    ],
+    genre: ["Gothic Rock", "Deathrock", "Post-Punk", "Dark Electronic"],
     foundingDate: "1991",
-    foundingLocation: {
-      "@type": "Place",
-      name: "Berlin, Germany",
-    },
-    sameAs: [...new Set(sameAs)],
-    image: absoluteUrl(baseUrl, "/images/652A9305.jpg"),
+  };
+}
+
+export function buildGlobalMusicGroupSchema() {
+  return {
+    "@context": "https://schema.org",
+    ...buildMusicGroupSchema(),
   };
 }
 
@@ -62,7 +65,7 @@ export function buildReleaseSchema(baseUrl: string, release: Release) {
     "@id": releaseId(baseUrl, release),
     name: release.title,
     datePublished: `${release.year}-01-01`,
-    byArtist: buildArtistReference(baseUrl),
+    byArtist: buildArtistReference(),
     image: absoluteUrl(baseUrl, release.image),
     ...(release.bandcampLink ? { url: release.bandcampLink } : {}),
   };
@@ -84,10 +87,7 @@ export function buildReleaseSchema(baseUrl: string, release: Release) {
 function buildSchemaGraph(baseUrl: string, releaseList: Release[]) {
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      buildMusicGroupSchema(baseUrl),
-      ...releaseList.map((release) => buildReleaseSchema(baseUrl, release)),
-    ],
+    "@graph": releaseList.map((release) => buildReleaseSchema(baseUrl, release)),
   };
 }
 

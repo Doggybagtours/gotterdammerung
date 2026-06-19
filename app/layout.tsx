@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
+import { buildGlobalMusicGroupSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -13,7 +15,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: "Götterdämmerung | Official Website",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -23,8 +25,8 @@ export const metadata: Metadata = {
     apple: "/favicon/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Götterdämmerung",
-    description: "Official website of Götterdämmerung.",
+    title: "Götterdämmerung | Official Website",
+    description: siteConfig.description,
     siteName: siteConfig.name,
     type: "website",
     images: [
@@ -38,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Götterdämmerung",
-    description: "Official website of Götterdämmerung.",
+    title: "Götterdämmerung | Official Website",
+    description: siteConfig.description,
     images: [
       {
         url: "/og-image.jpg",
@@ -62,6 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
+        <JsonLd data={buildGlobalMusicGroupSchema()} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

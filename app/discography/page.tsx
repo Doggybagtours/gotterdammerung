@@ -7,9 +7,14 @@ import { mkI, mkII, type Release } from "@/lib/discography";
 import { buildDiscographySchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 
+const title = "Discography | Official Releases Since 1994";
+const description =
+  "Explore the complete Götterdämmerung discography from the 1994 debut to Towards The Unknown EP, Intensity Zone and A Violent Sky.";
+
 export const metadata: Metadata = {
-  title: "Discography",
-  description: "Discography by Götterdämmerung — albums, EPs, singles and artwork.",
+  title: { absolute: title },
+  description,
+  openGraph: { title, description },
 };
 
 type EraSectionProps = {

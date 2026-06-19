@@ -6,10 +6,14 @@ import {
   secondaryStreamingPlatforms,
 } from "@/lib/streaming";
 
+const title = "Listen | Spotify, Apple Music, Deezer, YouTube and Bandcamp";
+const description =
+  "Listen to Götterdämmerung on Bandcamp, Spotify, Apple Music, Deezer and YouTube.";
+
 export const metadata: Metadata = {
-  title: "Streaming",
-  description:
-    "Listen to Götterdämmerung on Bandcamp, Spotify, Apple Music, and other platforms.",
+  title: { absolute: title },
+  description,
+  openGraph: { title, description },
 };
 
 export default function StreamingPage() {

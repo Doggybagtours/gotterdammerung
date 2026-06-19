@@ -5,9 +5,14 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { featuredVideo, youtubeChannelUrl } from "@/lib/videos";
 
+const title = "Videos | Official Music Videos and Live Footage";
+const description =
+  "Watch official music videos, live performances and visual releases from Götterdämmerung.";
+
 export const metadata: Metadata = {
-  title: "Video",
-  description: "Official videos from Götterdämmerung on YouTube.",
+  title: { absolute: title },
+  description,
+  openGraph: { title, description },
 };
 
 export default function VideoPage() {

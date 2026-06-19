@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { Hero } from "@/components/Hero";
@@ -10,6 +11,16 @@ import { bandIntro } from "@/lib/band";
 import { buildHomepageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
 import { featuredVideo } from "@/lib/videos";
+
+const title = "Götterdämmerung | Official Website";
+const description =
+  "Official website of Götterdämmerung. Gothic rock, deathrock, post-punk and dark electronic music since 1991. Discography, videos, news, merchandise and streaming links.";
+
+export const metadata: Metadata = {
+  title: { absolute: title },
+  description,
+  openGraph: { title, description },
+};
 
 export default function Home() {
   return (

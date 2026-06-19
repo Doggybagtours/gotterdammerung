@@ -5,9 +5,14 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const bandcampMerchUrl = "https://gotterdammerung.bandcamp.com/merch";
 
+const title = "Merchandise | Official CDs, Vinyl, T-Shirts and Collectibles";
+const description =
+  "Official Götterdämmerung merchandise including CDs, shirts, collectibles and limited releases.";
+
 export const metadata: Metadata = {
-  title: "Merch",
-  description: "Official Götterdämmerung store on Bandcamp.",
+  title: { absolute: title },
+  description,
+  openGraph: { title, description },
 };
 
 export default function MerchPage() {
