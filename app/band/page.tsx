@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { bandBiography } from "@/lib/band";
+import { pageUrl } from "@/lib/site";
 
 const title = "Band Biography | Götterdämmerung";
 const description =
@@ -10,6 +11,7 @@ const description =
 export const metadata: Metadata = {
   title: "Band Biography",
   description,
+  alternates: { canonical: pageUrl("/band") },
   openGraph: { title, description },
 };
 

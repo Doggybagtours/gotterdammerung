@@ -11,8 +11,8 @@ function absoluteUrl(baseUrl: string, path: string): string {
   return new URL(path, baseUrl).toString();
 }
 
-function releaseId(baseUrl: string, release: Release): string {
-  return `${baseUrl}/discography#${release.id}`;
+function releaseId(release: Release): string {
+  return `${BAND_URL}/discography#${release.id}`;
 }
 
 function isMusicRecording(release: Release): boolean {
@@ -60,13 +60,13 @@ export function buildGlobalMusicGroupSchema() {
   };
 }
 
-export function buildReleaseSchema(baseUrl: string, release: Release) {
+export function buildReleaseSchema(release: Release) {
   const shared = {
-    "@id": releaseId(baseUrl, release),
+    "@id": releaseId(release),
     name: release.title,
     datePublished: `${release.year}-01-01`,
     byArtist: buildArtistReference(),
-    image: absoluteUrl(baseUrl, release.image),
+    image: absoluteUrl(BAND_URL, release.image),
     ...(release.bandcampLink ? { url: release.bandcampLink } : {}),
   };
 
@@ -84,17 +84,17 @@ export function buildReleaseSchema(baseUrl: string, release: Release) {
   };
 }
 
-function buildSchemaGraph(baseUrl: string, releaseList: Release[]) {
+function buildSchemaGraph(releaseList: Release[]) {
   return {
     "@context": "https://schema.org",
-    "@graph": releaseList.map((release) => buildReleaseSchema(baseUrl, release)),
+    "@graph": releaseList.map((release) => buildReleaseSchema(release)),
   };
 }
 
-export function buildHomepageSchema(baseUrl: string) {
-  return buildSchemaGraph(baseUrl, previewReleases);
+export function buildHomepageSchema() {
+  return buildSchemaGraph(previewReleases);
 }
 
-export function buildDiscographySchema(baseUrl: string) {
-  return buildSchemaGraph(baseUrl, releases);
+export function buildDiscographySchema() {
+  return buildSchemaGraph(releases);
 }

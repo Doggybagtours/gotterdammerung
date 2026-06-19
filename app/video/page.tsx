@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { featuredVideo, youtubeChannelUrl } from "@/lib/videos";
+import { pageUrl } from "@/lib/site";
 
 const title = "Videos | Official Music Videos and Live Footage";
 const description =
@@ -12,6 +13,7 @@ const description =
 export const metadata: Metadata = {
   title: { absolute: title },
   description,
+  alternates: { canonical: pageUrl("/video") },
   openGraph: { title, description },
 };
 

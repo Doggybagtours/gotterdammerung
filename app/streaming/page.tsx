@@ -5,6 +5,7 @@ import {
   primaryStreamingPlatform,
   secondaryStreamingPlatforms,
 } from "@/lib/streaming";
+import { pageUrl } from "@/lib/site";
 
 const title = "Listen | Spotify, Apple Music, Deezer, YouTube and Bandcamp";
 const description =
@@ -13,6 +14,7 @@ const description =
 export const metadata: Metadata = {
   title: { absolute: title },
   description,
+  alternates: { canonical: pageUrl("/streaming") },
   openGraph: { title, description },
 };
 

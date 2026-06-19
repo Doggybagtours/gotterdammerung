@@ -9,7 +9,7 @@ import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import { previewReleases } from "@/lib/discography";
 import { bandIntro } from "@/lib/band";
 import { buildHomepageSchema } from "@/lib/schema";
-import { siteConfig } from "@/lib/site";
+import { pageUrl } from "@/lib/site";
 import { featuredVideo } from "@/lib/videos";
 
 const title = "Götterdämmerung | Official Website";
@@ -19,13 +19,14 @@ const description =
 export const metadata: Metadata = {
   title: { absolute: title },
   description,
+  alternates: { canonical: pageUrl("/") },
   openGraph: { title, description },
 };
 
 export default function Home() {
   return (
     <>
-      <JsonLd data={buildHomepageSchema(siteConfig.url)} />
+      <JsonLd data={buildHomepageSchema()} />
       <Hero />
 
       <section id="news" className="hidden section-border py-16 md:py-24 bg-black">

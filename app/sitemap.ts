@@ -1,47 +1,52 @@
 import type { MetadataRoute } from "next";
-
-const baseUrl = "https://gotterdammerung.band";
+import { pageUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${baseUrl}/`,
+      url: pageUrl("/"),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/news`,
+      url: pageUrl("/news"),
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/discography`,
+      url: pageUrl("/discography"),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/video`,
+      url: pageUrl("/streaming"),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/merch`,
+      url: pageUrl("/video"),
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: pageUrl("/merch"),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/band`,
+      url: pageUrl("/band"),
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: pageUrl("/contact"),
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.5,

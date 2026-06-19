@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Button } from "@/components/Button";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
-import { siteConfig, socialLinks } from "@/lib/site";
+import { siteConfig, socialLinks, pageUrl } from "@/lib/site";
 
 const title = "Contact | Götterdämmerung";
 const description =
@@ -11,6 +11,7 @@ const description =
 export const metadata: Metadata = {
   title: "Contact",
   description,
+  alternates: { canonical: pageUrl("/contact") },
   openGraph: { title, description },
 };
 

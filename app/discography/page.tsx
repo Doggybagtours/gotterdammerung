@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { ReleaseCard } from "@/components/ReleaseCard";
 import { mkI, mkII, type Release } from "@/lib/discography";
 import { buildDiscographySchema } from "@/lib/schema";
-import { siteConfig } from "@/lib/site";
+import { pageUrl, siteConfig } from "@/lib/site";
 
 const title = "Discography | Official Releases Since 1994";
 const description =
@@ -14,6 +14,7 @@ const description =
 export const metadata: Metadata = {
   title: { absolute: title },
   description,
+  alternates: { canonical: pageUrl("/discography") },
   openGraph: { title, description },
 };
 
@@ -47,7 +48,7 @@ function EraSection({ title, subtitle, releases }: EraSectionProps) {
 export default function DiscographyPage() {
   return (
     <>
-      <JsonLd data={buildDiscographySchema(siteConfig.url)} />
+      <JsonLd data={buildDiscographySchema()} />
       <PageHeader
         title="Discography"
         description="Albums, EPs, singles and artwork. Listen and purchase on Bandcamp."

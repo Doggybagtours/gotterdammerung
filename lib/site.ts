@@ -3,9 +3,13 @@ export const siteConfig = {
   tagline: "Official Website",
   description:
     "Official website of Götterdämmerung. Gothic rock, deathrock, post-punk and dark electronic music since 1991. Discography, videos, news, merchandise and streaming links.",
-  url: "https://gotterdammerung.vercel.app",
+  url: "https://gotterdammerung.band",
   email: "info@gotterdammerung.band",
 } as const;
+
+export function pageUrl(path: string): string {
+  return path === "/" ? siteConfig.url : `${siteConfig.url}${path}`;
+}
 
 export const logo = {
   white: "/logo/logo-white.svg",

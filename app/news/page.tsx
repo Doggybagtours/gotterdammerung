@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
+import { pageUrl } from "@/lib/site";
 
 const title = "News | Götterdämmerung";
 const description =
@@ -9,6 +10,7 @@ const description =
 export const metadata: Metadata = {
   title: "News",
   description,
+  alternates: { canonical: pageUrl("/news") },
   openGraph: { title, description },
 };
 

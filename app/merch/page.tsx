@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Button } from "@/components/Button";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
+import { pageUrl } from "@/lib/site";
 
 const bandcampMerchUrl = "https://gotterdammerung.bandcamp.com/merch";
 
@@ -12,6 +13,7 @@ const description =
 export const metadata: Metadata = {
   title: { absolute: title },
   description,
+  alternates: { canonical: pageUrl("/merch") },
   openGraph: { title, description },
 };
 
