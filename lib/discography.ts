@@ -13,6 +13,8 @@ export type Release = {
   bandcampEmbedHeight?: number;
   /** Direct link to the release or store on Bandcamp. */
   bandcampLink?: string;
+  /** Optional external link shown below the Bandcamp player. */
+  orderLink?: { href: string; label: string };
 };
 
 function discographyImage(filename: string): string {
@@ -32,6 +34,10 @@ export const mkII: Release[] = [
       "https://bandcamp.com/EmbeddedPlayer/album=382557534/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/transparent=true/",
     bandcampLink: "https://gotterdammerung.bandcamp.com/album/towards-the-unknown-ep",
     bandcampEmbedHeight: 470,
+    orderLink: {
+      href: "https://elasticstage.com/gotterdammerung/releases/towards-the-unknown-singleep",
+      label: "Order the Vinyl",
+    },
   },
   {
     id: "a-violent-sky",
