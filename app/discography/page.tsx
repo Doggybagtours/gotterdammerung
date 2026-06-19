@@ -52,7 +52,6 @@ export default function DiscographyPage() {
       <PageHeader
         title="Discography"
         description="Albums, EPs, singles and artwork. Listen and purchase on Bandcamp."
-        titleImage={{ src: "/nav/discography.svg", width: 354.24, height: 36.16 }}
       />
 
       <div className="bg-black">

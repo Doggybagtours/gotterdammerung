@@ -20,10 +20,7 @@ export const metadata: Metadata = {
 export default function MerchPage() {
   return (
     <>
-      <PageHeader
-        title="Merch"
-        titleImage={{ src: "/nav/merch.svg", width: 166.08, height: 36.16 }}
-      />
+      <PageHeader title="MERCH" />
 
       <section className="py-16 md:py-24 bg-black">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
