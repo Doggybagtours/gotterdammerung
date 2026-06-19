@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function VideoPage() {
   return (
     <>
-      <PageHeader title="VIDEO" />
+      <PageHeader title="Video" />
 
       <section className="py-16 md:py-24 bg-black">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
