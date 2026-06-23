@@ -17,7 +17,7 @@ export const bandPageDescription =
 export const formationSection = {
   title: "Formation",
   paragraphs: [
-    "Götterdämmerung was formed in Berlin in August 1991, at a moment when the city's underground was still absorbing the aftershocks of post-punk, cold wave and the darker fringes of independent rock.",
+    "Götterdämmerung was formed in the Netherlands in August 1991, at a moment when the country's underground was still absorbing the aftershocks of post-punk, cold wave and the darker fringes of independent rock.",
     "From the outset, the band pursued a sound that was deliberate, austere and physical — less concerned with fashion than with atmosphere, tension and permanence.",
   ],
 };
