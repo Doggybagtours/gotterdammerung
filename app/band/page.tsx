@@ -115,19 +115,9 @@ export default function BandPage() {
       <section className="py-16 md:py-24 bg-black">
         <div className="mx-auto max-w-3xl px-6 md:px-10">
           <SectionHeading title={musicalInfluencesSection.title} />
-          <p className="text-base md:text-lg text-white-muted leading-[1.85] mb-8">
+          <p className="text-base md:text-lg text-white-muted leading-[1.85]">
             {musicalInfluencesSection.intro}
           </p>
-          <ul className="space-y-4">
-            {musicalInfluencesSection.items.map((item, index) => (
-              <li
-                key={index}
-                className="border-l-2 border-white/20 pl-5 text-base md:text-lg text-white-muted leading-[1.85]"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

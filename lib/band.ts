@@ -26,12 +26,6 @@ export const musicalInfluencesSection = {
   title: "Musical Influences",
   intro:
     "The band's early writing drew from overlapping currents within European underground music rather than a single scene or formula.",
-  items: [
-    "Gothic rock and post-punk song structures — melodic darkness, reverb-heavy guitars and a vocal presence rooted in drama rather than display.",
-    "Deathrock energy — raw rhythm, confrontational delivery and a sense of urgency inherited from punk's harder edge.",
-    "Noise and experimental texture — distortion, feedback and sonic abrasion used as atmosphere, not ornament.",
-    "Dark electronic colour — synthetic undertones and mechanical pulse woven into guitar-led arrangements.",
-  ],
 };
 
 export const gothicRockSection = {
