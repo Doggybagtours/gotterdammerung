@@ -66,7 +66,7 @@ export const bandTimeline: TimelineEntry[] = [
   {
     year: "2001–2010",
     headline: "MK I catalogue grows",
-    text: "Albums including Morphia, Of Whores and Culture and compilations extend the band's recorded legacy. Urban Gothic (2010) closes the first chapter as the final MK I line-up release.",
+    text: "Move to Berlin. Albums including Morphia, Of Whores and Culture and compilations extend the band's recorded legacy. Urban Gothic (2010) closes the first chapter as the final MK I line-up release.",
   },
   {
     year: "2021",
