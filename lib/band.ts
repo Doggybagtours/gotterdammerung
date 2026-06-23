@@ -55,7 +55,7 @@ export const deathrockSection = {
 export const bandTimeline: TimelineEntry[] = [
   {
     year: "1991",
-    headline: "Band formed in Berlin",
+    headline: "Band formed in the Netherlands",
     text: "Götterdämmerung is founded in August 1991, establishing a sound shaped by gothic rock, deathrock, post-punk and noise.",
   },
   {
